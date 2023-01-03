@@ -1,4 +1,4 @@
-module github.com/plantoncloud/template-go-rest-api
+module {{cookiecutter.go_module_name}}
 
 go 1.19
 
