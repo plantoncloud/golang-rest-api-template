@@ -8,32 +8,32 @@ import (
 func main() {
 	r := gin.Default()
 
-	// GET a single task
-	r.GET("/task/:id", func(c *gin.Context) {
+	// GET a single todo
+	r.GET("/todo/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(http.StatusOK, gin.H{"id": id})
 	})
 
-	// GET all tasks
-	r.GET("/tasks", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"tasks": []string{"task 1", "task 2"}})
+	// GET all todos
+	r.GET("/todos", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"todos": []string{"todo 1", "todo 2"}})
 	})
 
-	// POST a new task
-	r.POST("/task", func(c *gin.Context) {
-		task := c.PostForm("task")
-		c.JSON(http.StatusOK, gin.H{"task": task})
+	// POST a new todo
+	r.POST("/todo", func(c *gin.Context) {
+		todo := c.PostForm("todo")
+		c.JSON(http.StatusOK, gin.H{"todo": todo})
 	})
 
-	// PUT an updated task
-	r.PUT("/task/:id", func(c *gin.Context) {
+	// PUT an updated todo
+	r.PUT("/todo/:id", func(c *gin.Context) {
 		id := c.Param("id")
-		task := c.PostForm("task")
-		c.JSON(http.StatusOK, gin.H{"id": id, "task": task})
+		todo := c.PostForm("todo")
+		c.JSON(http.StatusOK, gin.H{"id": id, "todo": todo})
 	})
 
-	// DELETE a task
-	r.DELETE("/task/:id", func(c *gin.Context) {
+	// DELETE a todo
+	r.DELETE("/todo/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(http.StatusOK, gin.H{"id": id})
 	})
