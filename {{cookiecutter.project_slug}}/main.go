@@ -8,6 +8,16 @@ import (
 func main() {
 	r := gin.Default()
 
+	// GET all routes
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"GET":    []string{"/todos", "todo/:id"},
+			"POST":   []string{"/todo"},
+			"PUT":    []string{"todo/:id"},
+			"DELETE": []string{"todo/:id"},
+		})
+	})
+
 	// GET a single todo
 	r.GET("/todo/:id", func(c *gin.Context) {
 		id := c.Param("id")
