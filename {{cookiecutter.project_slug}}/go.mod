@@ -1,4 +1,4 @@
-module {{cookiecutter.project_slug}}
+module {{cookiecutter.go_module_name}}
 
 go 1.19
 
